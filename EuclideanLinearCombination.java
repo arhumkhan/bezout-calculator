@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+/**
+* EuclideanLinearCombination takes two numbers as input,
+* finds the GCD of those two numbers with the Euclidean Algorithm (saving each step), 
+* and finally works backwards through the steps, combining each previous expression
+* to arrive at the linear combination of the GCD from our two inputs.
+* 
+* @author  Arhum Khan
+*/
 public class EuclideanLinearCombination 
 {
 	public static void main(String[] args)
@@ -49,11 +57,11 @@ public class EuclideanLinearCombination
 		//decrementing down from 'steps'
 		while(steps > 0)
 		{
-			System.out.println("Iteration #" + steps);
+			System.out.println("Iteration #" + steps + ": ");
 			aScalar[steps] = aScalar[steps] + (bScalar[steps] * bScalar[steps - 1]);
 			bScalar[steps] = (aScalar[steps - 1]) * bScalar[steps];
 			numB[steps] = numA[steps - 1];
-			System.out.println(diff + " = " 
+			System.out.print(diff + " = " 
 					+ aScalar[steps] + "(" + numA[steps] + ")" + " - " 
 					+ bScalar[steps] + "(" + numB[steps] + ")");
 			
