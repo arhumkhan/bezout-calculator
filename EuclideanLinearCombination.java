@@ -6,7 +6,7 @@ public class EuclideanLinearCombination
 	{
 		int[] aScalar = new int[]{1,1,1,1,1,1,1,1,1,1};
 		int[] numA = new int[10];
-		int[] bScalar = new int[10];
+		int[] bScalar = new int[]{1,0,0,0,0,0,0,0,0,0};
 		int[] numB = new int[10];
 		//can only do ten steps
 		
@@ -21,17 +21,14 @@ public class EuclideanLinearCombination
 			numB[0] = numA[0];
 			numA[0] = x;
 		}
-		bScalar[0] = 1;
 		
 		System.out.println("Obtaining the GCD with Euclidean Algorithm:");
 		int steps = 1;
 		int diff = numA[0] % numB[0];
 		bScalar[0] = numA[0] / numB[0];
-		
 		System.out.println(diff + " = " 
 				+ aScalar[0] + "(" + numA[0] + ")" + " - " 
 				+ bScalar[0] + "(" + numB[0] + ")");
-		
 		while(diff > 0)
 		{
 			numA[steps] = numB[steps - 1];
@@ -43,13 +40,13 @@ public class EuclideanLinearCombination
 					+ bScalar[steps] + "(" + numB[steps] + ")");
 			steps++;
 		}
-		//this iterates past our gcd value twice so we gotta roll back our values... twice
+		
+		//loop iterates past our gcd value twice
 		diff = numA[steps - 2] % numB[steps - 2];
 		steps = steps - 2;
 		
-		
 		System.out.println("Working backwards from the end to the beginning:");
-		//decrement down from i
+		//decrementing down from 'steps'
 		while(steps > 0)
 		{
 			System.out.println("Iteration #" + steps);
@@ -60,8 +57,7 @@ public class EuclideanLinearCombination
 					+ aScalar[steps] + "(" + numA[steps] + ")" + " - " 
 					+ bScalar[steps] + "(" + numB[steps] + ")");
 			
-			//switching places for consistency lol
-			//bigger number to the left, num replaced to the right
+			//switching sides of our constant (scalar) and variable number
 			int placeHolder = 0;
 			placeHolder = aScalar[steps];
 			aScalar[steps] = bScalar[steps];
@@ -70,8 +66,8 @@ public class EuclideanLinearCombination
 			numA[steps] = numB[steps];
 			numB[steps] = placeHolder;
 			
-			//annnnd the whole new equation into steps - 1
-			//probably a better way to do this
+			//reassigning our new combined expression
+			//to the previous 'step' expression used
 			aScalar[steps-1] = aScalar[steps];
 			numA[steps-1] = numA[steps];
 			bScalar[steps-1] = bScalar[steps];
