@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class EuclideanLinearCombination 
 {
@@ -8,10 +9,20 @@ public class EuclideanLinearCombination
 		int[] bScalar = new int[10];
 		int[] numB = new int[10];
 		
-		aScalar[0] = 1;
-		numA[0] = 97;
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter first number:");
+		numA[0] = kb.nextInt();
+		System.out.println("Enter second number:");
+		numB[0] = kb.nextInt();
+		
+		if(numB[0] > numA[0])
+		{
+			int x = numB[0];
+			numB[0] = numA[0];
+			numA[0] = x;
+		}
+		
 		bScalar[0] = 1;
-		numB[0] = 57;
 		
 		int i = 1;
 		int diff = numA[0] % numB[0];
