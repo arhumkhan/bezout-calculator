@@ -11,8 +11,7 @@ public class EuclideanLinearCombination
 		aScalar[0] = 1;
 		numA[0] = 97;
 		bScalar[0] = 1;
-		numB[0] = 57
-				;
+		numB[0] = 57;
 		
 		int i = 1;
 		int diff = numA[0] % numB[0];
