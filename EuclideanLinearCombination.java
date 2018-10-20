@@ -57,11 +57,11 @@ public class EuclideanLinearCombination
 		//decrementing down from 'steps'
 		while(steps > 0)
 		{
-			System.out.println("Iteration #" + steps + ": ");
+			System.out.print("Iteration #" + steps + ": ");
 			aScalar[steps] = aScalar[steps] + (bScalar[steps] * bScalar[steps - 1]);
 			bScalar[steps] = (aScalar[steps - 1]) * bScalar[steps];
 			numB[steps] = numA[steps - 1];
-			System.out.print(diff + " = " 
+			System.out.println(diff + " = " 
 					+ aScalar[steps] + "(" + numA[steps] + ")" + " - " 
 					+ bScalar[steps] + "(" + numB[steps] + ")");
 			
