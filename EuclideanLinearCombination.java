@@ -6,6 +6,7 @@ import java.util.Scanner;
 * and finally works backwards through the steps, combining each previous expression
 * to arrive at the linear combination of the GCD from our two inputs.
 * 
+*
 * @author  Arhum Khan
 */
 public class EuclideanLinearCombination 
