@@ -87,8 +87,19 @@ public class EuclideanLinearCombination
 		
 		System.out.println();
 		System.out.println("The linear combination of " + numA[0] + " and " + numB[0] + " is:");
-		System.out.println(diff + " = " 
-				+ aScalar[0] + "(" + numA[0] + ") - " 
-				+ bScalar[0] + "(" + numB[0] + ")");
+		// Checking for terms to be displayed in correct order
+		int diffCheck = (aScalar[0]*numA[0]) - (bScalar[0]*numB[0]);
+		if (diffCheck == 1)
+		{
+			System.out.println(diff + " = " 
+			+ aScalar[0] + "(" + numA[0] + ") - "
+			+ bScalar[0] + "(" + numB[0] + ")");
+		}
+		else
+		{
+			System.out.println(diff + " = " 
+			+ bScalar[0] + "(" + numB[0] + ") - "
+			+ aScalar[0] + "(" + numA[0] + ")");
+		}
 	}
 }
